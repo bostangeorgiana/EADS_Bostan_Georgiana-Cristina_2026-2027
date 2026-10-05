@@ -1,0 +1,49 @@
+05-Oct-2026 20:56:57.154 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.26
+05-Oct-2026 20:56:57.155 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 9 2026 21:36:42 UTC
+05-Oct-2026 20:56:57.156 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.26.0
+05-Oct-2026 20:56:57.156 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+05-Oct-2026 20:56:57.156 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            26.6.2
+05-Oct-2026 20:56:57.156 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+05-Oct-2026 20:56:57.156 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/bostangeorgiana/Library/Java/JavaVirtualMachines/openjdk-27/Contents/Home
+05-Oct-2026 20:56:57.156 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           27+35-2325
+05-Oct-2026 20:56:57.156 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+05-Oct-2026 20:56:57.156 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat
+05-Oct-2026 20:56:57.156 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat
+05-Oct-2026 20:56:57.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat/conf/logging.properties
+05-Oct-2026 20:56:57.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+05-Oct-2026 20:56:57.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+05-Oct-2026 20:56:57.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+05-Oct-2026 20:56:57.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+05-Oct-2026 20:56:57.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+05-Oct-2026 20:56:57.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+05-Oct-2026 20:56:57.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+05-Oct-2026 20:56:57.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+05-Oct-2026 20:56:57.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+05-Oct-2026 20:56:57.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+05-Oct-2026 20:56:57.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat
+05-Oct-2026 20:56:57.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat
+05-Oct-2026 20:56:57.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat/temp
+05-Oct-2026 20:56:57.197 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/bostangeorgiana/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+05-Oct-2026 20:56:57.300 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+05-Oct-2026 20:56:57.312 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [232] milliseconds
+05-Oct-2026 20:56:57.328 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+05-Oct-2026 20:56:57.328 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.26]
+05-Oct-2026 20:56:57.332 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat/webapps/docs]
+05-Oct-2026 20:56:57.434 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat/webapps/docs] has finished in [101] ms
+05-Oct-2026 20:56:57.434 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat/webapps/manager]
+05-Oct-2026 20:56:57.445 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat/webapps/manager] has finished in [11] ms
+05-Oct-2026 20:56:57.445 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat/webapps/examples]
+05-Oct-2026 20:56:57.521 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat/webapps/examples] has finished in [76] ms
+05-Oct-2026 20:56:57.521 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat/webapps/ROOT]
+05-Oct-2026 20:56:57.531 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat/webapps/ROOT] has finished in [10] ms
+05-Oct-2026 20:56:57.531 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat/webapps/host-manager]
+05-Oct-2026 20:56:57.541 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/bostangeorgiana/Desktop/Personal/Facultate/Java/tomcat/webapps/host-manager] has finished in [10] ms
+05-Oct-2026 20:56:57.542 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+05-Oct-2026 20:56:57.547 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [234] milliseconds
+05-Oct-2026 20:57:39.894 INFO [http-nio-8080-exec-1] org.apache.tomcat.util.http.parser.Cookie.logInvalidHeader A cookie header was received [g_state={"i_l":0,"i_ll":1789597686303,"i_b":"KlB9PU8ayOxM0RIBsZSy8F4vBCc1XmmSwQzKCeKdMPk","i_e":{"enable_itp_optimization":24},"i_et":1789597686303};] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+05-Oct-2026 21:04:54.586 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+05-Oct-2026 21:04:54.588 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+05-Oct-2026 21:04:54.592 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+05-Oct-2026 21:04:54.601 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+05-Oct-2026 21:04:54.603 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
