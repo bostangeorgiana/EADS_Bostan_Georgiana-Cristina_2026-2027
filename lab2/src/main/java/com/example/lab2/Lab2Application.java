@@ -11,3 +11,12 @@ public class Lab2Application {
 	}
 
 }
+
+/*
+
+java -jar target/lab2-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
+java -jar target/lab2-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
+
+APP_DATA_LABEL=from-env-variable java -jar target/lab2-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
+APP_DATA_LABEL=from-env-variable java -jar target/lab2-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev --app.data.label=from-command-line
+ */

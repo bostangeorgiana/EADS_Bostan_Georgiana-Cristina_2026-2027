@@ -1,0 +1,8 @@
+# Configurare profil PROD
+app:
+  data:
+    file: data/students-prod.txt
+    format: txt
+    delimiter: "="
+    skip-header: false
+    encoding: UTF-8

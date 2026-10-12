@@ -1,0 +1,6 @@
+# studenti - productie
+Elena = 9.0
+Radu = 6.5
+Maria = 8.75
+Vlad = 10.0
+Cristina = 9.25

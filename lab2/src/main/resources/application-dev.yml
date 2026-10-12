@@ -1,0 +1,9 @@
+# Configurare pentru profilul DEV
+app:
+  data:
+    file: data/students-dev.csv # calea fisierului
+    format: csv # formatul
+    delimiter: "," # separatorul
+    skip-header: true # sarim antetul
+    encoding: UTF-8
+    label: from-application-dev.yml # pt test -> de la d)
