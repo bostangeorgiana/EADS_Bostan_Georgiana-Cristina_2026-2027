@@ -1,0 +1,22 @@
+cd ~/Documents/GitHub/EADS_Bostan_Georgiana-Cristina_2026-2027/lab2
+./mvnw clean package -DskipTests
+CP="target/classes:$HOME/.m2/repository/org/springframework/spring-core/7.0.9/spring-core-7.0.9.jar"
+
+# c) + d) aceleasi clase + blocuri static
+java -cp "$CP" com.example.lab2.advanced.Experiment verify
+
+# e) timp de executie
+java -cp "$CP" com.example.lab2.advanced.Experiment time
+
+# f) clase incarcate
+java -Xlog:class+load -cp "$CP" com.example.lab2.advanced.Experiment asm | grep -c "com.example.lab2.advanced.components"
+java -Xlog:class+load -cp "$CP" com.example.lab2.advanced.Experiment reflection | grep -c "com.example.lab2.advanced.components"
+java -Xlog:class+load -cp "$CP" com.example.lab2.advanced.Experiment asm | grep -c "class,load"
+java -Xlog:class+load -cp "$CP" com.example.lab2.advanced.Experiment reflection | grep -c "class,load"
+
+# g) dependenta lipsa
+rm target/classes/com/example/lab2/advanced/external/ExternalLib.class
+java -cp "$CP" com.example.lab2.advanced.Experiment verify
+
+# refacere proiect
+./mvnw clean package -DskipTests
