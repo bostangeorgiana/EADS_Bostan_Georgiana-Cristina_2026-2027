@@ -1,6 +1,7 @@
 package com.example.lab3.library.repository;
 
 import com.example.lab3.library.model.Book;
+import com.example.lab3.library.model.BookType;
 import org.springframework.stereotype.Repository;
 
 import java.util.Comparator;
@@ -19,11 +20,11 @@ public class BookRepository {
         add(new Book(1L, "Ion", "Liviu Rebreanu"));
         add(new Book(2L, "Enigma Otiliei", "George Calinescu"));
         add(new Book(3L, "Morometii", "Marin Preda"));
-        add(new Book(4L, "Baltagul", "Mihail Sadoveanu"));
+        add(new Book(4L, "Baltagul", "Mihail Sadoveanu", BookType.REFERENCE));
         add(new Book(5L, "Maitreyi", "Mircea Eliade"));
         add(new Book(6L, "Moara cu noroc", "Ioan Slavici"));
-        add(new Book(7L, "Padurea spanzuratilor", "Liviu Rebreanu"));
-        add(new Book(8L, "Ultima noapte de dragoste", "Camil Petrescu"));
+        add(new Book(7L, "Padurea spanzuratilor", "Liviu Rebreanu", BookType.RARE));
+        add(new Book(8L, "Ultima noapte de dragoste", "Camil Petrescu", BookType.NEW_RELEASE));
     }
 
     private void add(Book book) {

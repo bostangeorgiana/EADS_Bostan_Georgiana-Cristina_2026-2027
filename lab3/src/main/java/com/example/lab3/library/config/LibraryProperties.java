@@ -12,10 +12,11 @@ import java.util.Map;
 @ConfigurationProperties(prefix = "library")
 public class LibraryProperties {
 
-    private String policy = "fixed";                          // library.policy: fixed | role
+    private String policy = "fixed";                          // library.policy: fixed | role | drools
     private int maxBooks = 3;                                 // library.max-books
     private Map<MemberRole, Integer> roleLimits = new HashMap<>(); // library.role-limits.STUDENT ...
     private int eventThreshold = 2;                           // library.event-threshold
+    private String rulesFile = "classpath:rules/borrowing-rules.drl";
 
     public String getPolicy() { return policy; }
     public void setPolicy(String policy) { this.policy = policy; }
@@ -28,4 +29,7 @@ public class LibraryProperties {
 
     public int getEventThreshold() { return eventThreshold; }
     public void setEventThreshold(int eventThreshold) { this.eventThreshold = eventThreshold; }
+
+    public String getRulesFile() { return rulesFile; }
+    public void setRulesFile(String rulesFile) { this.rulesFile = rulesFile; }
 }

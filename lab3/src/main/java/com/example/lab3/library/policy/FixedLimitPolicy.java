@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 // Politica DEFAULT: aceeasi limita pentru toti.
-// Se creeaza daca library.policy=fixed SAU daca proprietatea lipseste (matchIfMissing)
+// Se creeaza daca library.policy=fixed sau daca proprietatea lipseste.
 @Component
 @ConditionalOnProperty(name = "library.policy", havingValue = "fixed", matchIfMissing = true)
 public class FixedLimitPolicy implements BorrowingPolicy {

@@ -1,6 +1,7 @@
 package com.example.lab3.library;
 
 import com.example.lab3.library.exception.BorrowingException;
+import com.example.lab3.library.policy.BorrowDecision;
 import com.example.lab3.library.repository.BookRepository;
 import com.example.lab3.library.service.BorrowingService;
 import org.springframework.boot.CommandLineRunner;
@@ -49,7 +50,8 @@ public class LibraryDemoRunner implements CommandLineRunner {
 
     private void borrow(Long memberId, Long bookId) {
         try {
-            borrowingService.borrowBook(memberId, bookId);
+            BorrowDecision decision = borrowingService.borrowBook(memberId, bookId);
+            System.out.println("   Borrowed for " + decision.loanDays() + " days");
         } catch (BorrowingException e) {
             // exceptia e deja scrisa in log de BorrowingExceptionAspect; mergem mai departe
         }

@@ -1,10 +1,11 @@
 package com.example.lab3.library.aspect;
 
 import com.example.lab3.library.exception.BookNotAvailableException;
-import com.example.lab3.library.exception.BorrowLimitExceededException;
+import com.example.lab3.library.exception.BorrowingNotAllowedException;
 import com.example.lab3.library.exception.MemberNotFoundException;
 import com.example.lab3.library.model.Book;
 import com.example.lab3.library.model.Member;
+import com.example.lab3.library.policy.BorrowDecision;
 import com.example.lab3.library.policy.BorrowingPolicy;
 import com.example.lab3.library.repository.BookRepository;
 import com.example.lab3.library.repository.MemberRepository;
@@ -13,8 +14,8 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-// INAINTE de imprumut: membrul exista? cartea e disponibila? limita nu e depasita?
-// Daca nu -> exceptie custom, iar metoda borrowBook NU mai ruleaza.
+// INAINTE de imprumut: membrul exista? cartea e disponibila? politica permite?
+// Daca nu, metoda borrowBook nu mai ruleaza.
 @Aspect
 @Component
 @Order(3)
@@ -32,7 +33,7 @@ public class BorrowingValidationAspect {
         this.borrowingPolicy = borrowingPolicy;
     }
 
-    // args(memberId, bookId) leaga argumentele metodei de parametrii acestei metode
+    // args(memberId, bookId) leaga argumentele metodei de parametrii acestei metode.
     @Before(value = "execution(* com.example.lab3.library.service.BorrowingService.borrowBook(..)) && args(memberId, bookId)",
             argNames = "memberId,bookId")
     public void validateBorrowing(Long memberId, Long bookId) {
@@ -46,9 +47,9 @@ public class BorrowingValidationAspect {
         }
 
         int current = bookRepository.countBorrowedBy(memberId);
-        if (!borrowingPolicy.canBorrow(member, current)) {
-            throw new BorrowLimitExceededException(member.name() + " reached the limit of "
-                    + borrowingPolicy.maxBooksFor(member) + " books");
+        BorrowDecision decision = borrowingPolicy.evaluate(member, book, current);
+        if (!decision.allowed()) {
+            throw new BorrowingNotAllowedException(decision.reason());
         }
     }
 }

@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 // Limita depinde de rolul membrului (STUDENT / REGULAR / PREMIUM).
-// Se creeaza doar daca library.policy=role
+// Se creeaza doar daca library.policy=role.
 @Component
 @ConditionalOnProperty(name = "library.policy", havingValue = "role")
 public class RoleBasedPolicy implements BorrowingPolicy {

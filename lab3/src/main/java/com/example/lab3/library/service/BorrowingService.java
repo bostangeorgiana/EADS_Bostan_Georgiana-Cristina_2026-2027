@@ -3,27 +3,29 @@ package com.example.lab3.library.service;
 import com.example.lab3.library.config.LibraryProperties;
 import com.example.lab3.library.event.HeavyBorrowerEvent;
 import com.example.lab3.library.exception.BookNotAvailableException;
-import com.example.lab3.library.exception.BorrowLimitExceededException;
 import com.example.lab3.library.exception.BorrowingException;
+import com.example.lab3.library.exception.BorrowingNotAllowedException;
 import com.example.lab3.library.exception.MemberNotFoundException;
 import com.example.lab3.library.model.Book;
 import com.example.lab3.library.model.Member;
+import com.example.lab3.library.policy.BorrowDecision;
 import com.example.lab3.library.policy.BorrowingPolicy;
 import com.example.lab3.library.repository.BookRepository;
 import com.example.lab3.library.repository.MemberRepository;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+
 @Service
 public class BorrowingService {
 
     private final MemberRepository memberRepository;
     private final BookRepository bookRepository;
-    private final BorrowingPolicy borrowingPolicy;      // Spring injecteaza Fixed- sau RoleBasedPolicy
+    private final BorrowingPolicy borrowingPolicy;
     private final ApplicationEventPublisher eventPublisher;
     private final LibraryProperties props;
 
-    // Constructor injection pentru TOATE dependentele (slide 4, 7)
     public BorrowingService(MemberRepository memberRepository,
                             BookRepository bookRepository,
                             BorrowingPolicy borrowingPolicy,
@@ -36,26 +38,27 @@ public class BorrowingService {
         this.props = props;
     }
 
-    public void borrowBook(Long memberId, Long bookId) {
+    public BorrowDecision borrowBook(Long memberId, Long bookId) {
         Member member = memberRepository.findById(memberId)
                 .orElseThrow(() -> new MemberNotFoundException("Member with id " + memberId + " does not exist"));
         Book book = bookRepository.findById(bookId)
                 .orElseThrow(() -> new BookNotAvailableException("Book with id " + bookId + " does not exist"));
 
-        // validare cu politica injectata
+        // Verificam decizia politicii injectate inainte sa modificam cartea.
         int current = bookRepository.countBorrowedBy(memberId);
-        if (!borrowingPolicy.canBorrow(member, current)) {
-            throw new BorrowLimitExceededException(member.name() + " reached the limit of "
-                    + borrowingPolicy.maxBooksFor(member) + " books");
+        BorrowDecision decision = borrowingPolicy.evaluate(member, book, current);
+        if (!decision.allowed()) {
+            throw new BorrowingNotAllowedException(decision.reason());
         }
 
-        book.borrowTo(memberId);
+        book.borrowTo(memberId, LocalDate.now().plusDays(decision.loanDays()));
 
-        // publicam evenimentul daca membrul a trecut de prag (slide 32)
+        // Publicam evenimentul daca membrul a trecut de prag 
         int now = current + 1;
         if (now > props.getEventThreshold()) {
             eventPublisher.publishEvent(new HeavyBorrowerEvent(member.name(), now, props.getEventThreshold()));
         }
+        return decision;
     }
 
     public void returnBook(Long memberId, Long bookId) {

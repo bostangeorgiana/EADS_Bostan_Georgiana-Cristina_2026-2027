@@ -1,0 +1,131 @@
+package rules
+
+import com.example.lab3.library.rules.BorrowRequest
+import com.example.lab3.library.rules.RuleDecision
+
+rule "Book must be available"
+    salience 100
+when
+    BorrowRequest(bookAvailable == false, $title : bookTitle)
+    $decision : RuleDecision(allowed == true)
+then
+    modify($decision) {
+        setAllowed(false),
+        setReason("Book '" + $title + "' is not available")
+    }
+end
+
+rule "Reference books stay in the library"
+    salience 100
+when
+    BorrowRequest(bookType == "REFERENCE", $title : bookTitle)
+    $decision : RuleDecision(allowed == true)
+then
+    modify($decision) {
+        setAllowed(false),
+        setReason("'" + $title + "' is a reference book and can only be read in the library")
+    }
+end
+
+rule "Rare books are only for premium members"
+    salience 100
+when
+    BorrowRequest(bookType == "RARE", memberRole != "PREMIUM",
+                  $name : memberName, $title : bookTitle)
+    $decision : RuleDecision(allowed == true)
+then
+    modify($decision) {
+        setAllowed(false),
+        setReason($name + " cannot borrow the rare book '" + $title + "'")
+    }
+end
+
+rule "Student borrowing limit"
+    salience 100
+when
+    BorrowRequest(memberRole == "STUDENT", currentlyBorrowed >= 2, $name : memberName)
+    $decision : RuleDecision(allowed == true)
+then
+    modify($decision) {
+        setAllowed(false),
+        setReason($name + " (STUDENT) reached the limit of 2 books")
+    }
+end
+
+rule "Regular member borrowing limit"
+    salience 100
+when
+    BorrowRequest(memberRole == "REGULAR", currentlyBorrowed >= 3, $name : memberName)
+    $decision : RuleDecision(allowed == true)
+then
+    modify($decision) {
+        setAllowed(false),
+        setReason($name + " (REGULAR) reached the limit of 3 books")
+    }
+end
+
+rule "Premium member borrowing limit"
+    salience 100
+when
+    BorrowRequest(memberRole == "PREMIUM", currentlyBorrowed >= 5, $name : memberName)
+    $decision : RuleDecision(allowed == true)
+then
+    modify($decision) {
+        setAllowed(false),
+        setReason($name + " (PREMIUM) reached the limit of 5 books")
+    }
+end
+
+rule "Student loan period"
+    salience 50
+when
+    BorrowRequest(memberRole == "STUDENT")
+    $decision : RuleDecision(allowed == true, loanDays == 0)
+then
+    modify($decision) { setLoanDays(14) }
+end
+
+rule "Regular member loan period"
+    salience 50
+when
+    BorrowRequest(memberRole == "REGULAR")
+    $decision : RuleDecision(allowed == true, loanDays == 0)
+then
+    modify($decision) { setLoanDays(21) }
+end
+
+rule "Premium member loan period"
+    salience 50
+when
+    BorrowRequest(memberRole == "PREMIUM")
+    $decision : RuleDecision(allowed == true, loanDays == 0)
+then
+    modify($decision) { setLoanDays(30) }
+end
+
+rule "Default loan period for new membership types"
+    salience 1
+when
+    BorrowRequest()
+    $decision : RuleDecision(allowed == true, loanDays == 0)
+then
+    modify($decision) { setLoanDays(14) }
+end
+
+rule "New releases have a shorter loan period"
+    salience 40
+when
+    BorrowRequest(bookType == "NEW_RELEASE")
+    $decision : RuleDecision(allowed == true, loanDays > 7)
+then
+    modify($decision) { setLoanDays(7) }
+end
+
+rule "Rare books have a shorter loan period"
+    salience 40
+when
+    BorrowRequest(bookType == "RARE")
+    $decision : RuleDecision(allowed == true, loanDays > 10)
+then
+    modify($decision) { setLoanDays(10) }
+end
