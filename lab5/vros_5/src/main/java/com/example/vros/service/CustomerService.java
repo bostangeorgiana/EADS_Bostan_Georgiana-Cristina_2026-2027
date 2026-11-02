@@ -28,4 +28,20 @@ public class CustomerService {
     public List<Customer> searchByName(String keyword) {
         return customerRepository.findByNameContainingIgnoreCase(keyword);
     }
+
+    // modifica un client existent; Optional gol daca nu exista
+    public Optional<Customer> update(Long id, Customer data) {
+        Optional<Customer> existing = customerRepository.findById(id);
+        if (existing.isEmpty()) {
+            return Optional.empty();
+        }
+        Customer customer = existing.get();
+        customer.setName(data.getName());
+        customer.setEmail(data.getEmail());
+        customer.setPhone(data.getPhone());
+        customer.setAddress(data.getAddress());
+        customer.setLatitude(data.getLatitude());
+        customer.setLongitude(data.getLongitude());
+        return Optional.of(customerRepository.save(customer));
+    }
 }

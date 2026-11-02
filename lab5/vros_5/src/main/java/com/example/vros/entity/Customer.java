@@ -1,5 +1,6 @@
 package com.example.vros.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,7 @@ public class Customer extends Person {
     private Double latitude;
     private Double longitude;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "customer")          // inverse side
     private List<Delivery> deliveries = new ArrayList<>();
 
