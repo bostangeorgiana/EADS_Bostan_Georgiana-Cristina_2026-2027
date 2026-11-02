@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>4.1.1</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>lab3</artifactId>
@@ -17,9 +17,14 @@
 	<licenses>
 		<license/>
 	</licenses>
-	<developers>
+
+	<dependency>
 		<developer/>
-	</developers>
+		<groupId>net.datafaker</groupId>
+		<artifactId>datafaker</artifactId>
+		<version>2.4.2</version>
+	</dependency>
+	
 	<scm>
 		<connection/>
 		<developerConnection/>
