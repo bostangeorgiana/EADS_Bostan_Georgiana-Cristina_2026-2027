@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf8e1183-e90c-49b7-a370-49553b9626a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/vros/src/main/java/com/example/vros/runner/CriteriaSearchRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vros/src/main/java/com/example/vros/runner/DataFakerRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vros/src/test/java/com/example/vros/benchmark/CacheBenchmark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vros/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vros/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vros/src/main/java/com/example/vros/VrosApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/vros/src/main/java/com/example/vros/VrosApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vros/src/main/java/com/example/vros/service/DeliveryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/vros/src/main/java/com/example/vros/service/DeliveryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vros/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/vros/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
