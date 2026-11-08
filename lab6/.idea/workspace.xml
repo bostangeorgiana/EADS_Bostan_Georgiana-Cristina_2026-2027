@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bf8e1183-e90c-49b7-a370-49553b9626a5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vros_5/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/VrosApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/VrosApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/config/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/controller/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/controller/DeliveryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/controller/ScenarioController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/controller/VehicleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/dto/DeliveryRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/dto/DeliveryResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/dto/ScenarioRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/dto/ScenarioResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/dto/VehicleRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/dto/VehicleResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/entity/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/entity/Delivery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/entity/Depot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/entity/Driver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/entity/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/entity/Scenario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/entity/Vehicle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/repository/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/repository/DeliveryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/repository/DepotRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/repository/DriverRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/repository/ScenarioRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/repository/VehicleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/runner/CriteriaSearchRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/runner/CustomerTestRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/runner/DataFakerRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/service/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/service/DeliveryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/service/DepotService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/service/DriverService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/service/ScenarioService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vros/service/VehicleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/main/java/com/example/vvoEd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/test/java/com/example/vros/VrosApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/vros_5/src/test/java/com/example/vros/VrosApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vros_5/src/test/java/com/example/vros/benchmark/CacheBenchmark.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3LZ9M1Wi4sVloA8Unjyn2l2HHOq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/40749/Documents/GitHub/EADS_Bostan_Georgiana-Cristina_2026-2027/lab5/vros_5/src/main/java/com/example/vros",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\40749\Documents\GitHub\EADS_Bostan_Georgiana-Cristina_2026-2027\lab5\vros_5\src\main\java\com\example\vros" />
+      <recent name="C:\Users\40749\Documents\GitHub\EADS_Bostan_Georgiana-Cristina_2026-2027\lab5\.idea" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-ac68fc9d2b05-intellij.indexing.shared.core-IU-263.7307.200" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf8e1183-e90c-49b7-a370-49553b9626a5" name="Changes" comment="" />
+      <created>1793650671531</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1793650671531</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/vros/src/main/java/com/example/vros/service/DeliveryService.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
