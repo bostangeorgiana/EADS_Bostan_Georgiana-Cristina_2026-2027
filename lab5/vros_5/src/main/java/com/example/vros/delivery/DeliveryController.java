@@ -12,7 +12,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/deliveries")
+//@RequestMapping("/deliveries")
+@RequestMapping("/api/v1/deliveries")
 public class DeliveryController {
 
     private final DeliveryService deliveryService;

@@ -12,7 +12,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/scenarios")
+//@RequestMapping("/scenarios")
+@RequestMapping("/api/v1/scenarios")
 public class ScenarioController {
 
     private final ScenarioService scenarioService;

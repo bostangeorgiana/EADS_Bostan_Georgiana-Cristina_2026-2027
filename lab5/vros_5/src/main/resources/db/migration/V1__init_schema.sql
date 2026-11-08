@@ -38,19 +38,20 @@ CREATE TABLE IF NOT EXISTS deliveries (
     notes VARCHAR(500),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
     );
+
 CREATE TABLE IF NOT EXISTS scenarios (
     id   BIGSERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE
-);
+    );
 
 CREATE TABLE IF NOT EXISTS scenario_vehicles (
     scenario_id BIGINT NOT NULL REFERENCES scenarios(id) ON DELETE CASCADE,
     vehicle_id  BIGINT NOT NULL REFERENCES vehicles(id) ON DELETE CASCADE,
     PRIMARY KEY (scenario_id, vehicle_id)
-);
+    );
 
 CREATE TABLE IF NOT EXISTS scenario_deliveries (
     scenario_id BIGINT NOT NULL REFERENCES scenarios(id) ON DELETE CASCADE,
     delivery_id BIGINT NOT NULL REFERENCES deliveries(id) ON DELETE CASCADE,
     PRIMARY KEY (scenario_id, delivery_id)
-);
+    );

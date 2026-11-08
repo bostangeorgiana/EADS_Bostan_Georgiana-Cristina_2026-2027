@@ -58,6 +58,20 @@
           <artifactId>spring-boot-starter-data-jpa-test</artifactId>
           <scope>test</scope>
        </dependency>
+        <!-- Flyway: migrari de schema -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-flyway</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-database-postgresql</artifactId>
+        </dependency>
+        <!-- HATEOAS: link-uri in raspunsuri (format HAL) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-hateoas</artifactId>
+        </dependency>
     </dependencies>
     <build>
        <plugins>

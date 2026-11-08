@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@Deprecated
 @RestController
-@RequestMapping("/customers")
+//@RequestMapping("/customers")
+@RequestMapping("/api/v1/customers")
 public class CustomerController {
 
     private final CustomerService customerService;
