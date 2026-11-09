@@ -2,7 +2,6 @@ package com.example.vros.delivery;
 
 import com.example.vros.customer.Customer;
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -14,7 +13,7 @@ public class Delivery {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id")          // owning side
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     private Integer quantity;
@@ -32,7 +31,7 @@ public class Delivery {
         this.notes = notes;
     }
 
-    @PrePersist                                // se executa automat inainte de INSERT
+    @PrePersist
     public void onCreate() {
         if (createdAt == null) {
             createdAt = LocalDateTime.now();

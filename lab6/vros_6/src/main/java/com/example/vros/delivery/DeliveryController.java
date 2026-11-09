@@ -5,6 +5,7 @@ import com.example.vros.delivery.DeliveryDto.DeliveryResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -12,7 +13,6 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-//@RequestMapping("/deliveries")
 @RequestMapping("/api/v1/deliveries")
 public class DeliveryController {
 
@@ -55,6 +55,7 @@ public class DeliveryController {
         return ResponseEntity.ok(DeliveryResponse.from(updated.get()));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         if (deliveryService.findById(id).isEmpty()) {
