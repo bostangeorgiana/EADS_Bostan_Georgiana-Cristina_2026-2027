@@ -2,6 +2,7 @@ package com.example.vros.security;
 
 import com.example.vros.security.AuthDto.LoginRequest;
 import com.example.vros.security.AuthDto.LoginResponse;
+import com.example.vros.security.AuthDto.RefreshRequest;
 import com.example.vros.security.AuthDto.RegisterRequest;
 import com.example.vros.security.AuthDto.RegisterResponse;
 import jakarta.validation.Valid;
@@ -19,12 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     private final AuthenticationManager authenticationManager;
-    private final JwtService jwtService;
     private final AuthService authService;
 
-    public AuthController(AuthenticationManager authenticationManager, JwtService jwtService, AuthService authService) {
+    public AuthController(AuthenticationManager authenticationManager, AuthService authService) {
         this.authenticationManager = authenticationManager;
-        this.jwtService = jwtService;
         this.authService = authService;
     }
 
@@ -34,10 +33,18 @@ public class AuthController {
                 new UsernamePasswordAuthenticationToken(request.username(), request.password()));
 
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        String token = jwtService.generateToken(userDetails);
-        String role = userDetails.getAuthorities().iterator().next().getAuthority();
+        return authService.createTokens(userDetails);
+    }
 
-        return new LoginResponse(token, userDetails.getUsername(), role);
+    @PostMapping("/refresh")
+    public LoginResponse refresh(@Valid @RequestBody RefreshRequest request) {
+        return authService.refresh(request.refreshToken());
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<Void> logout(@Valid @RequestBody RefreshRequest request) {
+        authService.logout(request.refreshToken());
+        return ResponseEntity.noContent().build();
     }
 
     @PostMapping("/register")

@@ -16,7 +16,12 @@ public class AuthDto {
             String password) {
     }
 
-    public record LoginResponse(String token, String username, String role) {
+    public record LoginResponse(String token, String refreshToken, String username, String role) {
+    }
+
+    public record RefreshRequest(
+            @NotBlank(message = "refreshToken este obligatoriu")
+            String refreshToken) {
     }
 
     public record RegisterRequest(
