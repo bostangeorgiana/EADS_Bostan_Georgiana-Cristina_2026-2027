@@ -1,0 +1,12 @@
+com\example\worker\OptimizationDto$VehicleData.class
+com\example\worker\OptimizationDto.class
+com\example\worker\KafkaErrorConfig.class
+com\example\worker\OptimizationDto$OptimizationSolution.class
+com\example\worker\OptimizationDto$Route.class
+com\example\worker\DeadLetterConsumer.class
+com\example\worker\VrpSolver.class
+com\example\worker\OptimizationDto$OptimizationRequest.class
+com\example\worker\OptimizationWorkerApplication.class
+com\example\worker\OptimizationDto$DeliveryData.class
+com\example\worker\OptimizationDto$OptimizationAck.class
+com\example\worker\OptimizationRequestConsumer.class
