@@ -1,0 +1,76 @@
+{
+  "realm": "vros",
+  "enabled": true,
+  "accessTokenLifespan": 300,
+  "roles": {
+    "realm": [
+      { "name": "ADMIN" },
+      { "name": "CUSTOMER" },
+      { "name": "DRIVER" }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "vros-app",
+      "name": "VROS App",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "vros-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "redirectUris": ["http://localhost:8081/*"],
+      "webOrigins": ["http://localhost:8081"],
+      "protocolMappers": [
+        {
+          "name": "realm roles in roles claim",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-realm-role-mapper",
+          "consentRequired": false,
+          "config": {
+            "multivalued": "true",
+            "claim.name": "roles",
+            "jsonType.label": "String",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true",
+            "introspection.token.claim": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "kcadmin",
+      "enabled": true,
+      "email": "kcadmin@vros.com",
+      "emailVerified": true,
+      "firstName": "Keycloak",
+      "lastName": "Admin",
+      "credentials": [ { "type": "password", "value": "admin123", "temporary": false } ],
+      "realmRoles": ["ADMIN"]
+    },
+    {
+      "username": "maria",
+      "enabled": true,
+      "email": "maria@vros.com",
+      "emailVerified": true,
+      "firstName": "Maria",
+      "lastName": "Ionescu",
+      "credentials": [ { "type": "password", "value": "maria123", "temporary": false } ],
+      "realmRoles": ["CUSTOMER"]
+    },
+    {
+      "username": "ion",
+      "enabled": true,
+      "email": "ion@vros.com",
+      "emailVerified": true,
+      "firstName": "Ion",
+      "lastName": "Popescu",
+      "credentials": [ { "type": "password", "value": "ion123", "temporary": false } ],
+      "realmRoles": ["DRIVER"]
+    }
+  ]
+}
